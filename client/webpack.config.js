@@ -25,12 +25,22 @@ module.exports = () => {
         swSrc: path.resolve(__dirname, 'src-sw.js'), // Update the path to your service worker.
       }),
       new WebpackPwaManifest({
-        name: 'My TODO App',
-        short_name: 'TODO App',
-        description: 'A simple TODO list app',
-        background_color: '#ffffff',
-        theme_color: '#3498db',
-        start_url: '.',
+        fingerprints: false,
+        inject: true,
+        name: 'Text Editor Plus!',
+        short_name: 'TEP',
+        description: 'Never forget your contacts!',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
       }),
     ],
     module: {
@@ -42,10 +52,12 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
+          // We use babel-loader in order to use ES6.
           use: {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
         },
