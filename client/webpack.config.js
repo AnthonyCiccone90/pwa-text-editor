@@ -10,7 +10,7 @@ module.exports = () => {
   return {
     mode: 'development', // Set the mode to development.
     entry: {
-      main: './assets/js/index.js'
+      main: './src/js/index.js'
     },
     output: {
       filename: '[name].bundle.js',
