@@ -6,7 +6,7 @@ I WANT to create notes or code snippets with or without an internet connection <
 SO THAT I can reliably retrieve them for later use
 
 ## Description
-This a a simple text editor used to demonstrate progressive web applicaiton (PWA) functionality using bundling, webpack and WebpackPwaManifest. Below is a screenshot of how the page will load in the browser.
+This a a simple text editor used to demonstrate progressive web applicaiton (PWA) functionality using bundling, webpack and WebpackPwaManifest. This application is also available when not no internet connection is available. Below is a screenshot of how the page will load in the browser.
 
 
 ![Alt text](<Screenshot 2023-11-08 at 16.48.36.png>)
